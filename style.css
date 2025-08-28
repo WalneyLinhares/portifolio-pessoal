@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--color-two);
+}
+
+/* Definindo as variaveis */
+:root {
+    --bg-color: #0e0e0e;
+    --color-one: #000000;
+    --color-two: #ffffff;
+    --paragraph: #84828A;
+    --font-secundary-color: #dfdfdf;
+    --primary-color: #015aff;
+    --border-color: rgba(255, 255, 255, 0.200);
+}
+
+/* Variaveis do modo dark/light */
+body.light-mode {
+  --bg-color: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.500);
+  --color-one: #ffffff;
+  --color-two: #000000;
+  --font-secundary-color: #363636;
+}
+
+/* Centralizar a pagina */
+.centralize-pg {
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--bg-color)
+}
+
+.header h1 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    color: var(--color-two);
+    font-size: 2.5rem;
+}
+
+.nav-header {
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    border: 1px solid var(--border-color);
+}
+
+.nav-itens {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-itens a {
+    color: var(--font-secundary-color);
+}
+
+.nav-itens a:hover {
+    color: var(--color-two);
+    text-shadow: 0 0 4px var(--color-two);
+}
+
+.switch input[type="checkbox"] {
+    display: none;
+}
+
+.switch div{
+    display: inline-block;
+    width: 3.8rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    color: var(--color-two);
+    cursor: pointer;
+}
+
+.switch div div{
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 52%;
+    background-color: var(--color-one);
+    border-radius: 50%;
+    position: absolute;
+
+    transform: translate(0%);
+    transition: transform .5s;
+}
+
+.switch input[type="checkbox"]:checked + div div {
+    transform: translate(100%);
+    background-color: var(--color-two);
+
+    & i {
+        color: var(--color-one);
+    }
+}
+
+.section-inicio {
+    margin-top: 5rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: var(--color-one);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.section-inicio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(140deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 150%);
+    filter: blur(100px);
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.article-inicio {
+    color: var(--color-two);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.article-inicio img {
+    display: block;
+    height: 25rem;
+    width: auto;
+    border-radius: 0.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+.title-h2 {
+    text-align: center;
+    margin: 5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+.div-text a {
+    color: var(--color-two);
+}
+
+.div-text a:hover {
+    text-decoration: underline;
+}
+
+.section-sobre-mim p {
+    color: var(--paragraph);
+    font-size: 1.2rem;
+    border-left: 5px solid #015aff;
+    padding: 0.6rem;
+}
+
+.formacao-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.formacao-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    background: linear-gradient(var(--color-one), var(--primary-color) 750%);
+    gap: 10%;
+
+    transform: scale(1);
+    transition: transform 0.5s;
+}
+
+.formacao-container:hover {
+    transform: scale(1.01);
+}
+
+.itens-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.itens-text p {
+    color: var(--paragraph);
+}
+
+.formacao-itens div img {
+    display: block;
+    height: 6rem;
+    width: auto;
+    border-radius: 0.5rem;
+}
+
+
+.portifolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    
+}
+
+.portifolio-itens {
+    padding: 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    position: relative;
+    background-color: var(--color-one);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: linear-gradient(140deg, var(--color-one), var(--primary-color) 950%);
+}
+
+.portifolio-itens:hover .portifolio-itens-img a{
+    transform: translate(390px, -50px);
+}
+
+.portifolio-itens:hover .portifolio-itens-img img {
+    transform: scale(1.10);
+}
+
+.portifolio-itens-img {
+    max-width: 500px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    border-radius: 1rem;
+}
+
+.portifolio-itens-img a {
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-one);
+    font-size: 1.3rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.877);
+
+    transform: translate(390px, 0);
+    transition: transform 0.3s;
+}
+
+.portifolio-itens-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* object-position: center; */
+
+    transition: transform 0.5s;
+}
+
+.nav-contato {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 7rem;
+}
+
+.nav-contato a {
+    padding: 1.5rem 3rem;
+    background: linear-gradient(var(--color-one), var(--primary-color) 950%);
+    border-radius: 0.8rem;
+    color: var(--color-two);
+    font-size: 1.5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.500);
+}
+
+.nav-contato a:hover {
+    text-shadow: 0 0 4px var(--color-two);
+    background: linear-gradient(0deg, var(--color-one), var(--primary-color) 950%);
+}
+
+footer {
+    padding: 2rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
