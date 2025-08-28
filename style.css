@@ -237,7 +237,7 @@ h3 {
     padding: 1.2rem;
     border: 1px solid var(--border-color);
     border-radius: 1rem;
-    position: relative;
+    /* position: relative; */
     background-color: var(--color-one);
     display: flex;
     flex-direction: column;
@@ -246,7 +246,7 @@ h3 {
 }
 
 .portifolio-itens:hover .portifolio-itens-img a{
-    transform: translate(390px, -50px);
+    transform: translateY(0);
 }
 
 .portifolio-itens:hover .portifolio-itens-img img {
@@ -275,7 +275,10 @@ h3 {
     font-size: 1.3rem;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.877);
 
-    transform: translate(390px, 0);
+    bottom: 8px;
+    right: 8px;
+
+    transform: translateY(50px);
     transition: transform 0.3s;
 }
 
